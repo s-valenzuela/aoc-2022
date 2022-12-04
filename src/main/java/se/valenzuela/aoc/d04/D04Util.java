@@ -10,15 +10,15 @@ import java.util.List;
 
 public class D04Util {
 
-    public static List<Void> change() {
+    public static List<Assignment> assignments() {
         try {
-            List<Void> rucksacks = new ArrayList<>();
-            File file = FileUtil.getFile("d03/input-1");
+            List<Assignment> assignments = new ArrayList<>();
+            File file = FileUtil.getFile("d04/input-1");
             BufferedReader reader = new BufferedReader(new FileReader(file));
             for (String line; (line = reader.readLine()) != null; ) {
-                //TBD
+                assignments.add(new Assignment(line));
             }
-            return rucksacks;
+            return assignments;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

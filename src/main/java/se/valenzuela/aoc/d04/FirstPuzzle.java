@@ -1,16 +1,14 @@
 package se.valenzuela.aoc.d04;
 
-import se.valenzuela.aoc.d03.Rucksack;
-
 import java.util.List;
 
 public class FirstPuzzle {
 
-    private static final List<Void> change = D04Util.change();
-    private static final String PRIORITIES = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private static final List<Assignment> assignments = D04Util.assignments();
 
     public static void main(String[] args) {
-        System.out.println("Sum of common items: ");
+        List<Assignment> fullyContainedAssignments = assignments.stream().filter(Assignment::isFullyContained).toList();
+        System.out.println("Assignments that are fully contained in one another: " + fullyContainedAssignments.size());
     }
 
 }

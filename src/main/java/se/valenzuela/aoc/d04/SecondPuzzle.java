@@ -4,12 +4,11 @@ import java.util.List;
 
 public class SecondPuzzle {
 
-    private static final List<Void> rucksacks = D04Util.change();
-    private static final String PRIORITIES = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private static final List<Assignment> assignments = D04Util.assignments();
 
     public static void main(String[] args) {
-
-        System.out.println("Sum of priorities for badges: ");
+        List<Assignment> overlappingAssignments = assignments.stream().filter(Assignment::doesOverlap).toList();
+        System.out.println("Overlapping assignments: " + overlappingAssignments.size());
     }
 
 }
